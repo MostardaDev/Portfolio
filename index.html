@@ -1,110 +1,20 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
-    <head>
-        <meta charset="utf-8" />
-        <title>Aula 10 </title>
-    </head>
-    <body>
-        <style>
-             .navigation-list {
-                display: flex;
-                justify-content: center;
-             }
-
-             .navigation-list li {
-                list-style: none ;
-                margin: 0 10px;
-             }
-
-             main {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-            }
-
-            .main-text h1, .about h2, .about p, .contact h2 {
-                text-align: center;
-            }
-
-            .contact form, .text-area {
-                display: flex;
-                flex-direction: column;
-            }
-
-            .contact form label {
-                margin: 10px 0;
-            }
-
-            .about img{
-                width: 50%;
-                height: auto;
-            }
-
-            .about figure {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .about figure figcaption {
-                background-color: #ccc;
-                width: 50%;
-                text-align: center;
-            }
-        </style>
-        <nav>
-            <ul class="navigation-list">
-                <li><a href="#mainText">Home</a></li>
-                <li><a href="#aboutMe">Sobre Mim</a></li>
-                <li><a href="#contactMe">Contatos</a></li>
-                <li><a href="#projects">Projetos</a></li>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPG Based</title>
+</head>
+<body>
+    <di class="main-content">
+        <div class="header">
+            <ul class="header-list">
+                <li class="header-list-item">Home</li>
+                <li class="header-list-item">Sobre</li>
+                <li class="header-list-item">Jogar</li>
             </ul>
-        </nav>
-        <main>
-            <div class="main-text" id="mainText">
-                <h1>Bem vindo ao meu site</h1>
-                <p class="main-paragraph">Olá visitante, seja bem vindo ao meu site. Sou Alysson duarte e estou fazendo
-                    curso na CERF</p>
-            </div>
-            <div class="about" id="aboutMe">
-                <h2>Sobre Mim</h2>
-                <figure>
-                    <img src="./img/alysson.jpg" alt="Alysson">
-                    <figcaption>Esse sou eu</figcaption>
-                </figure>
-                <P>Sou nascido e criado em Ribeirão preto, tenho 22 anos e sou Analista de Help Desk Jr </P>
-            </div>
-            <div class="contact" id="contactMe">
-                <h2>Entre em contato comigo</h2>
-                <form>
-                    <label for="name">
-                        Nome:
-                        <input type="text" placeholder="Seu nome" required name="name">
-                    </label>
-                    <label for="email">
-                        Email:
-                        <input type="text" placeholder="Digite seu email" required name="email">
-                    </label>
-                    <label for="message" class="text-area">
-                        Mensagem:
-                        <textarea>
-                        </textarea>
-                    </label>
-                    <button type="submit">Enviar</button>
-                </form>
-            </div>
-            <div class="projects" id="projects">
-                <h2>Segue aqui uma lista dos meus projetos</h2>
-                <ul>
-                    <li class="project">Projeto 01</li>
-                    <li class="project">Projeto 02</li>
-                    <li class="project">Projeto 03</li>
-                    <li class="project">Projeto 04</li>
-                    <li class="project">Projeto 05</li>
-                </ul>
-            </div>
-        </main>
-    </body>
+        </div>
+    </di>
+</body>
 </html>
