@@ -131,7 +131,7 @@ label .input-text {
     color: #fff;
 }
 
-.input-form button {
+.input-form button, buttom { 
     margin-top: 32px ;
     background: #000;
     border: 3px solid #fff;
@@ -139,4 +139,46 @@ label .input-text {
     color: #fff;
     font-family: "VT323" , monospace;
     font-size: 24px;
+}
+
+/* Rpg zone */
+
+.rpg-zone {
+    display: flex;
+    justify-content: center;
+}
+
+.rpg-zone div {
+    max-width: 280;
+    margin: 0 auto
+}
+
+@media screen and (min-width: 768px)  {
+    .rpg-zone div {
+        max-width: 1288px;
+    }
+    
+}
+
+.rpg-zone p {
+   font-size: 18px ;
+}
+
+@media screen and (min-width: 768px)  {
+    .rpg-zone p {
+       font-size: 24px;
+    }
+    
+}
+
+buttom:hover {
+    cursor: pointer;
+}
+
+.hub {
+    width: 100%;
+}
+.hub-inner {
+    display: flex;
+    justify-content: space-between;
 }
