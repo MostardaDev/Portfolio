@@ -35,7 +35,46 @@ class Player {
     }
 }
 
-function resetHUB () {
+function rollDice() {
+    const dice = Math.floor(Math.random() * 20) + 1;
+    if (dice > 10) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function handleOption(id, optionId) {
+    const result = rollDice();
+    const situationsDiv = document.querySelector(".situation");
+    situationsDiv.remove();
+    const resultDiv = document.createElement("div");
+    resultDiv.className = "result";
+    const option = data.situations[id].options[optionId];
+    console.log(option);
+    if (result) {
+        player.PlayerLife += option.success.bonus;
+        player.playerLevel ++;
+        resultDiv.innerHTML= `
+        <div class="results">
+            <p>${option.success.description}</p>
+            <button onclick="generateSituation()>Continuar</button>
+        </div>
+    `;       
+    } else {
+        player.PlayerLife -= option.fail.damage;
+        player.playerLevel ++;
+        resultDiv.innerHTML= `
+        <div class="results">
+            <p>${option.fail.description}</p>
+            <button onclick="generateSituation()">Continuar</button>
+        </div>
+    `  
+    }
+  rpgZone.appendChild(resultDiv);
+}
+
+function resetHUB() {
     if (document.querySelector(".hub")){
         document.querySelector(".hub").remove();
     }
@@ -58,6 +97,8 @@ function resetHUB () {
 }
 
 function generateSituation() {
+    resetHUB();
+    document.querySelector('.result')?.remove();
     const situations = data.situations[Math.floor(Math.random() * data.situations.length)];
     const situationsDiv = document.createElement("div");
     situationsDiv.className = "situation";
@@ -67,8 +108,8 @@ function generateSituation() {
             ${situations.description}
         </p>
         <div class="situation-inner-options">
-            <button>${situations.options[0].description}</button>
-            <button>${situations.options[1].description}</button>
+            <button onclick="handleOption(${situations.id}, 0)">${situations.options[0].description}</button>
+            <button onclick="handleOption(${situations.id}, 1)">${situations.options[1].description}</button>
         </div>
     </div>
     `

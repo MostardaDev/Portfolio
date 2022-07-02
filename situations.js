@@ -53,6 +53,87 @@ const data = {
                 }   
             }
           ]
+        },
+        {
+            "id": 2,
+            "description": "você está num mercado, quando vé uma senhora ser roubada por dois garotos",
+            "options": [{
+                "description": "você persegue os garotos",
+                "fail": {
+                "damage": 20,
+                "description": "Os garotos percebem que você está perseguindo eles e entâo chama os soldados e te acusam de roubar a senhora"
+                },
+                "success": {
+                    "bonus": 25,
+                    "description": "Você taca uma pedra em um dos garotos, fazendo eles soltarem os pertence com medo e devolver para senhora"
+                }   
+            },
+            {
+             "description": "você grita pelos guardas",
+             "fail": {
+                "damage": 1,
+                "description": "Os guardas ignoram o seu chamado"
+                },
+                "success": {
+                    "bonus": 5,
+                    "description": "Os guardas vão até você, você conta o que ocorreu e eles partem atrás dos ladrões"
+                }   
+            }
+          ]
+        },
+        {
+            "id": 3,
+            "description": "você está num mercado, quando vé uma senhora ser roubada por dois garotos",
+            "options": [{
+                "description": "você persegue os garotos",
+                "fail": {
+                "damage": 20,
+                "description": "Os garotos percebem que você está perseguindo eles e entâo chama os soldados e te acusam de roubar a senhora"
+                },
+                "success": {
+                    "bonus": 25,
+                    "description": "Você taca uma pedra em um dos garotos, fazendo eles soltarem os pertence com medo e devolver para senhora"
+                }   
+            },
+            {
+             "description": "você grita pelos guardas",
+             "fail": {
+                "damage": 1,
+                "description": "Os guardas ignoram o seu chamado"
+                },
+                "success": {
+                    "bonus": 5,
+                    "description": "Os guardas vão até você, você conta o que ocorreu e eles partem atrás dos ladrões"
+                }   
+            }
+          ]
+        },
+        {
+            "id": 4,
+            "description": "você está num mercado, quando vé uma senhora ser roubada por dois garotos",
+            "options": [{
+                "description": "você persegue os garotos",
+                "fail": {
+                "damage": 20,
+                "description": "Os garotos percebem que você está perseguindo eles e entâo chama os soldados e te acusam de roubar a senhora"
+                },
+                "success": {
+                    "bonus": 25,
+                    "description": "Você taca uma pedra em um dos garotos, fazendo eles soltarem os pertence com medo e devolver para senhora"
+                }   
+            },
+            {
+             "description": "você grita pelos guardas",
+             "fail": {
+                    "damage": 1,
+                    "description": "Os guardas ignoram o seu chamado"
+                },
+                "success": {
+                    "bonus": 5,
+                    "description": "Os guardas vão até você, você conta o que ocorreu e eles partem atrás dos ladrões"
+                }   
+            }
+          ]
         }
     ]
 }
