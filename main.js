@@ -3,6 +3,11 @@ console.log("Main js ............ ok")
 const rpgZone = document.querySelector(".rpg-zone")
 let player;
 
+
+
+console.log(data, 'data')
+
+
 class Player {
     constructor(name) {
         this.PlayerName = name;
@@ -45,19 +50,37 @@ function resetHUB () {
             Nome: ${player.PlayerName}
         </p>
         <p class="hub-inner-right">
-            Vida: ${player.playerLevel}
+            Level: ${player.playerLevel}
         </p>
     </div>
     `
     rpgZone.appendChild(hub)
 }
 
+function generateSituation() {
+    const situations = data.situations[Math.floor(Math.random() * data.situations.length)];
+    const situationsDiv = document.createElement("div");
+    situationsDiv.className = "situation";
+    situationsDiv.innerHTML = `
+    <div class="situation-inner">
+        <p>
+            ${situations.description}
+        </p>
+        <div class="situation-inner-options">
+            <button>${situations.options[0].description}</button>
+            <button>${situations.options[1].description}</button>
+        </div>
+    </div>
+    `
+    rpgZone.appendChild(situationsDiv);
+}
 
 function chooseRole(role) {
     document.querySelector('.class-choice').remove();
     player.addRole(role);
     console.log(player)
     resetHUB(); 
+    generateSituation();
 }
 
 function showClassChoice (nome) {
@@ -70,9 +93,9 @@ function showClassChoice (nome) {
     classChoice.innerHTML = `
     <div class="playerOptions">
     <p>Ok ${nome}! Agora Escolha sua classe</p>
-        <buttom onclick="chooseRole('warrior')">Guerreiro</buttom>
-        <buttom onclick="chooseRole('mage')">Mago</buttom>
-        <buttom onclick="chooseRole('rogue')">Ladino</buttom>
+        <button onclick="chooseRole('warrior')">Guerreiro</button>
+        <button onclick="chooseRole('mage')">Mago</button>
+        <button onclick="chooseRole('rogue')">Ladino</button>
     </div>
     `
     rpgZone.appendChild(classChoice)
