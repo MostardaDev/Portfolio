@@ -1,12 +1,5 @@
-console.log("Main js ............ ok")
-
 const rpgZone = document.querySelector(".rpg-zone")
 let player;
-
-
-
-console.log(data, 'data')
-
 
 class Player {
     constructor(name) {
@@ -29,7 +22,7 @@ class Player {
             case "rogue":
                 //this.playerDamage = 15;
                 //this.PlayerLife = 90;
-                this.playerCritChance = 0.6;
+                this.playerCritChance = 1.6;
                 break;
         }
     }
@@ -37,14 +30,18 @@ class Player {
 
 function rollDice() {
     let dice = Math.floor(Math.random() * 20) + 1;
-    dice = dice * (player.playerCritChance)
-    if (dice > 10) {
+    dice = dice + (player.playerCritChance * 2)
+    console.log(dice);  
+    if (dice <= 1.2) {
+        player.PlayerLife = player.PlayerLife - 100;
+    }
+    if (dice > 16) {
         return true;
     } else {
         return false;
     }
 }
-
+ 
 
 function handleOption(id, optionId) {
     const result = rollDice();
@@ -53,7 +50,6 @@ function handleOption(id, optionId) {
     const resultDiv = document.createElement("div");
     resultDiv.className = "result";
     const option = data.situations[id].options[optionId];
-    console.log(option);
     if (result) {
         player.PlayerLife += option.success.bonus;
         player.playerLevel ++;
@@ -72,7 +68,7 @@ function handleOption(id, optionId) {
             <button onclick="generateSituation()">Continuar</button>
         </div>
     `  
-    };
+    }
   rpgZone.appendChild(resultDiv);
 }
 
@@ -100,6 +96,10 @@ function resetHUB() {
 
 function generateSituation() {
     resetHUB();
+    if (player.PlayerLife <= 0) {
+        alert('Voce Morreu!');
+        return window.location.href = './index.html';
+    };
     document.querySelector('.result')?.remove();
     const situations = data.situations[Math.floor(Math.random() * data.situations.length)];
     const situationsDiv = document.createElement("div");
@@ -121,14 +121,12 @@ function generateSituation() {
 function chooseRole(role) {
     document.querySelector('.class-choice').remove();
     player.addRole(role);
-    console.log(player)
     resetHUB(); 
     generateSituation();
 }
 
 function showClassChoice (nome) {
     player = new Player(nome);
-    console.log(player)
     document.querySelector(".title-area").remove();
     document.querySelector(".input-area").remove();
     const classChoice = document.createElement("div")
@@ -146,7 +144,6 @@ function showClassChoice (nome) {
 
 // step 0
 function handleNameSubmit (e) {
-    console.log("Handle Submit Called")
     const nameOfPlayer = document.getElementById("input-0").value;
     if (nameOfPlayer.length > 0 ) {
         showClassChoice(nameOfPlayer);
