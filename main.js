@@ -45,6 +45,7 @@ function rollDice() {
     }
 }
 
+
 function handleOption(id, optionId) {
     const result = rollDice();
     const situationsDiv = document.querySelector(".situation");
