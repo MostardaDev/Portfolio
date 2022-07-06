@@ -36,7 +36,8 @@ class Player {
 }
 
 function rollDice() {
-    const dice = Math.floor(Math.random() * 20) + 1;
+    let dice = Math.floor(Math.random() * 20) + 1;
+    dice = dice * (player.playerCritChance)
     if (dice > 10) {
         return true;
     } else {
@@ -58,7 +59,7 @@ function handleOption(id, optionId) {
         resultDiv.innerHTML= `
         <div class="results">
             <p>${option.success.description}</p>
-            <button onclick="generateSituation()>Continuar</button>
+            <button onclick="generateSituation()">Continuar</button>
         </div>
     `;       
     } else {
@@ -70,7 +71,7 @@ function handleOption(id, optionId) {
             <button onclick="generateSituation()">Continuar</button>
         </div>
     `  
-    }
+    };
   rpgZone.appendChild(resultDiv);
 }
 
